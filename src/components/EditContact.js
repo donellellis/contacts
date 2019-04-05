@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
+import { updateContact } from '../actions/contact'
 
-import { connect } from 'react-redux'
-import { createContact } from '../actions/contact'
-
-class NewContactForm extends Component {
+class EditContact extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -16,13 +14,13 @@ class NewContactForm extends Component {
         e.target[1].value= ''
         e.target[2].value= ''
 
-        this.props.dispatch(createContact(name, email, phone))
+        this.props.dispatch(updateContact(name, email, phone))
     }
 
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <h2>Add New Contact</h2>
+                <h2>Edit Contact</h2>
                 <label>
                     Name:
                     <input type='text' />
@@ -41,6 +39,4 @@ class NewContactForm extends Component {
     }
 }
 
-const NewContact = connect()(NewContactForm)
-
-export default NewContact
+export default EditContact
