@@ -16,30 +16,21 @@ export default function contactReducer(state = DEFAULT_STATE, action){
         return{
             ...state,
             contacts: state.contacts.filter((contact, id) => {
-                return id !== action.payload
+                return contact.id !== action.payload
             })
         }
         case EDIT_CONTACT:
-        // return{
-        //     ...state,
-        //     contacts: state.contacts.map((contact, id) => {
-        //         if (id === action.payload.id) return {
-        //             ...contact,
-        //             editing: !contact.editing
-        //         }
-        //     })
-        // }
         return{
             ...state,
             contacts: state.contacts.filter((contact, id) => {
-                return id === action.payload
+                return contact.id === action.payload
             })
         }
         case UPDATE_CONTACT:
         return{
             ...state,
-            contacts: state.contacts.map((contact, index) => {
-                if (index !== action.payload.id) return contact
+            contacts: state.contacts.map((contact, id) => {
+                if (contact.id !== action.payload.id) return contact
                 return{
                     ...contact,
                     ...action.payload.updatedContact

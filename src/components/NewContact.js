@@ -5,18 +5,21 @@ import { createContact } from '../actions/contact'
 
 class NewContactForm extends Component {
 
+    startingId = 21
+
     handleSubmit = (e) => {
         e.preventDefault()
         let name = e.target[0].value
         let email = e.target[1].value
         let phone = e.target[2].value
+        let id = this.startingId++
 
         //removes content from input fields after submission
         e.target[0].value= ''
         e.target[1].value= ''
         e.target[2].value= ''
 
-        this.props.dispatch(createContact(name, email, phone))
+        this.props.dispatch(createContact(id, name, email, phone))
     }
 
     render(){

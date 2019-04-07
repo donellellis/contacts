@@ -1,9 +1,10 @@
 import { CREATE_CONTACT, DELETE_CONTACT, EDIT_CONTACT, UPDATE_CONTACT, TOGGLE_SHOW_EDIT } from '../constants/contact'
 
-export function createContact(name, email, phone){
+export function createContact(id, name, email, phone){
     return{
         type: CREATE_CONTACT,
         payload: {
+            id,
             name,
             email,
             phone
@@ -35,12 +36,9 @@ export function updateContact(id, updatedContact){
     }
 }
 
-export function toggleShowEdit(id, isHidden){
+export function toggleShowEdit(isHidden){
     return{
         type: TOGGLE_SHOW_EDIT,
-        payload: {
-            id,
-            isHidden
-        }
+        payload: isHidden
     }
 }
