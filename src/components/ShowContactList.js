@@ -5,35 +5,62 @@ import ShowContact from './ShowContact'
 import { connect } from 'react-redux'
 import { deleteContact } from '../actions/contact'
 
-const Contacts = ({contacts,onDelete }) => {
+class Contacts extends Component{
 
-    let contactList = contacts.map((d, i) => (
-        <ShowContact
-        key={i}
-        {...d}
-        handleDelete={e => {
-            e.preventDefault()
-            onDelete(i)
-        }}
-        />
-    ))
+    render(){
 
-    return(
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                </tr>
-            </thead>
-            <tbody>{contactList}</tbody>
-        </table>
-    )
-    
+        let contactList = this.props.contacts.map((d, i) => (
+         <ShowContact
+         key={i}
+         {...d}
+         handleDelete={e => {
+             e.preventDefault()
+             this.props.onDelete(i)
+         }}
+         />
+        ))
+        return(
+            <table>
+             <thead>
+                 <tr>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Phone Number</th>
+                 </tr>
+             </thead>
+             <tbody>{contactList}</tbody>
+         </table>
+        )
+    }
 }
 
+// const Contacts = ({contacts, onDelete }) => {
+
+//     let contactList = contacts.map((d, i) => (
+//         <ShowContact
+//         key={i}
+//         {...d}
+//         handleDelete={e => {
+//             e.preventDefault()
+//             onDelete(i)
+//         }}
+//         />
+//     ))
+
+//     return(
+//         <table>
+//             <thead>
+//                 <tr>
+//                     <th>Name</th>
+//                     <th>Email</th>
+//                     <th>Phone Number</th>
+//                 </tr>
+//             </thead>
+//             <tbody>{contactList}</tbody>
+//         </table>
+//     )
     
+// } 
 
 const mapStateToProps = state => ({
     contacts: state.contacts
