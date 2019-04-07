@@ -1,7 +1,8 @@
-import { CREATE_CONTACT, DELETE_CONTACT, UPDATE_CONTACT } from '../constants/contact'
+import { CREATE_CONTACT, DELETE_CONTACT, EDIT_CONTACT, UPDATE_CONTACT, TOGGLE_SHOW_EDIT } from '../constants/contact'
 
 const DEFAULT_STATE = {
-    contacts: []
+    contacts: [],
+    isHidden: true
 }
 
 export default function contactReducer(state = DEFAULT_STATE, action){
@@ -18,6 +19,22 @@ export default function contactReducer(state = DEFAULT_STATE, action){
                 return id !== action.payload
             })
         }
+        case EDIT_CONTACT:
+        // return{
+        //     ...state,
+        //     contacts: state.contacts.map((contact, id) => {
+        //         if (id === action.payload.id) return {
+        //             ...contact,
+        //             editing: !contact.editing
+        //         }
+        //     })
+        // }
+        return{
+            ...state,
+            contacts: state.contacts.filter((contact, id) => {
+                return id === action.payload
+            })
+        }
         case UPDATE_CONTACT:
         return{
             ...state,
@@ -28,6 +45,11 @@ export default function contactReducer(state = DEFAULT_STATE, action){
                     ...action.payload.updatedContact
                 }
             })
+        }
+        case TOGGLE_SHOW_EDIT:
+        return{
+            ...state,
+            isHidden: !state.isHidden
         }
         default:
             return state

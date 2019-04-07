@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { updateContact } from '../actions/contact'
 
-class EditContact extends Component {
+import { connect } from 'react-redux'
+
+
+class EditContactContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -18,25 +21,40 @@ class EditContact extends Component {
     }
 
     render(){
+        let contact = this.props.contacts[0]
+        console.log(this.props)
         return(
             <form onSubmit={this.handleSubmit}>
                 <h2>Edit Contact</h2>
                 <label>
                     Name:
-                    <input type='text' />
+                    <input type='text' value={contact.name}/>
                 </label>
                 <label>
                     Email:
-                    <input type='text'/>
+                    <input type='text' value={contact.email}/>
                 </label>
                 <label>
                     Phone Number:
-                    <input type='text'/>
+                    <input type='text' value={contact.phone}/>
                 </label>
                 <button type='submit'>Submit</button>
             </form>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    contacts: state.contacts,
+    isHidden: state.isHidden
+})
+
+// const mapDispatchToProps = dispatch => ({
+//     onDelete: id => dispatch(deleteContact(id)),
+//     onEdit: id => dispatch(editContact(id)),
+//     blah: id => dispatch(toggleShowEdit(id))
+// })
+
+const EditContact = connect(mapStateToProps)(EditContactContainer)
 
 export default EditContact

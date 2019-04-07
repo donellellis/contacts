@@ -8,7 +8,7 @@ import store from './store'
 ReactDOM.render(
     //makes store available throughout the component tree
     <Provider store={store}>
-        <App />
+        <App/>
     </Provider>, 
 document.getElementById('root')
 );
