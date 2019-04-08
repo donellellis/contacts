@@ -1,3 +1,4 @@
+import fetch from 'cross-fetch' //because most browsers don't yet support fetch natively per Redux docs
 import { 
     CREATE_CONTACT,
     DELETE_CONTACT,
@@ -53,41 +54,41 @@ export function toggleShowEdit(){
 
 //for fetching from contacts api
 //code excerpts from: http://jsfiddle.net/cdagli/b2uq8704/6/
-export function fetchPostsRequest(){
+export function fetchContactsRequest(){
     return {
       type: FETCH_REQUEST
     }
 }
   
-export function fetchPostsSuccess(payload) {
+export function fetchContactsSuccess(payload) {
     return {
       type: FETCH_SUCCESS,
       payload: payload.contacts
     }
 }
   
-export function fetchPostsError() {
+export function fetchContactsError() {
     return {
       type: FETCH_ERROR
     }
 }
 
 
-export function fetchPostsWithRedux() {
+export function fetchContactsWithRedux() {
 	return (dispatch) => {
-  	dispatch(fetchPostsRequest())
-    return fetchPosts().then(([response, json]) =>{
+  	dispatch(fetchContactsRequest())
+    return fetchContacts().then(([response, json]) =>{
     	if(response.status === 200){
-      	dispatch(fetchPostsSuccess(json))
+      	dispatch(fetchContactsSuccess(json))
       }
       else{
-      	dispatch(fetchPostsError())
+      	dispatch(fetchContactsError())
       }
     })
   }
 }
 
-export function fetchPosts() {
+export function fetchContacts() {
   const URL = "http://localhost:4000/contacts"
   return fetch(URL, { 
       method: 'GET'

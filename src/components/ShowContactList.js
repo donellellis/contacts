@@ -34,7 +34,6 @@ class Contacts extends Component{
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Id</th>
                     </tr>
                 </thead>
                 <tbody>{contactList}</tbody>

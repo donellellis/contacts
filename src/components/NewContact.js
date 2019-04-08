@@ -28,15 +28,15 @@ class NewContactForm extends Component {
                 <h2>Add New Contact</h2>
                 <label>
                     Name:
-                    <input type='text' />
+                    <input type='text' placeholder='First Last'/>
                 </label>
                 <label>
                     Email:
-                    <input type='text'/>
+                    <input type='email' placeholder="Email"/>
                 </label>
                 <label>
                     Phone Number:
-                    <input type='text'/>
+                    <input type='tel' placeholder='Phone' maxLength='10'/>
                 </label>
                 <button type='submit'>Submit</button>
             </form>
