@@ -10,7 +10,8 @@ import {
 
 const DEFAULT_STATE = {
     contacts: [],
-    isHidden: true
+    isHidden: true,
+    currentContact: null
 }
 
 export default function contactReducer(state = DEFAULT_STATE, action){
@@ -30,13 +31,18 @@ export default function contactReducer(state = DEFAULT_STATE, action){
         case EDIT_CONTACT:
         return{
             ...state,
-            contacts: state.contacts.filter((contact, id) => {
-                return contact.id === action.payload
+            currentContact: action.payload,
+            contacts: state.contacts.map((contact, id) => {
+                if (contact.id === action.payload.id) return contact
+                return{
+                    ...contact
+                }
             })
         }
         case UPDATE_CONTACT:
         return{
             ...state,
+            currentContact: null,
             contacts: state.contacts.map((contact, id) => {
                 if (contact.id !== action.payload.id) return contact
                 return{

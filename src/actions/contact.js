@@ -28,10 +28,10 @@ export function deleteContact(id){
     }
 }
 
-export function editContact(id){
+export function editContact(contact){
     return{
         type: EDIT_CONTACT,
-        payload: id
+        payload: contact
     }
 }
 
@@ -45,10 +45,9 @@ export function updateContact(id, updatedContact){
     }
 }
 
-export function toggleShowEdit(isHidden){
+export function toggleShowEdit(){
     return{
-        type: TOGGLE_SHOW_EDIT,
-        payload: isHidden
+        type: TOGGLE_SHOW_EDIT
     }
 }
 

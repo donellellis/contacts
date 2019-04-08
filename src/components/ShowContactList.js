@@ -5,6 +5,7 @@ import ShowContact from './ShowContact'
 import { connect } from 'react-redux'
 import { deleteContact, editContact, toggleShowEdit } from '../actions/contact'
 
+
 class Contacts extends Component{
 
     render(){
@@ -18,8 +19,8 @@ class Contacts extends Component{
          }}
          handleShowEdit={e => {
              e.preventDefault()
-             this.props.onEdit(contact.id)
-             this.props.showEdit(contact.id)
+             this.props.onEdit(contact)
+             this.props.showEdit()
          }}
          />
         ))
@@ -50,8 +51,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     onDelete: id => dispatch(deleteContact(id)),
-    onEdit: id => dispatch(editContact(id)),
-    showEdit: isHidden => dispatch(toggleShowEdit(isHidden))
+    onEdit: contact => dispatch(editContact(contact)),
+    showEdit: () => dispatch(toggleShowEdit())
 })
 
 const ShowContactList = connect(mapStateToProps, mapDispatchToProps)(Contacts)

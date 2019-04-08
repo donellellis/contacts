@@ -17,7 +17,7 @@ class AppHome extends Component {
     return (
       <div className="App">
         <h1>Contacts</h1>
-        <NewContact/>
+        {this.props.isHidden && <NewContact/>}
         {!this.props.isHidden && <EditContact/>}
         {this.props.isHidden && <ShowContactList/>}
       </div>
@@ -25,11 +25,9 @@ class AppHome extends Component {
   }
 }
 
-
-
 const mapStateToProps = state => ({
   isHidden: state.isHidden
 })
 
-const App = connect(mapStateToProps, { fetchPostsWithRedux })(AppHome)
+const App = connect(mapStateToProps, {fetchPostsWithRedux})(AppHome)
 export default App
