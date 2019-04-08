@@ -7,6 +7,7 @@ import EditContact from './EditContact'
 
 import { fetchContactsWithRedux } from '../actions/contact'
 
+
 class AppHome extends Component {
 
   componentDidMount(){
@@ -15,7 +16,7 @@ class AppHome extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <h1>Contacts</h1>
         {this.props.isHidden && <NewContact/>}
         {!this.props.isHidden && <EditContact/>}

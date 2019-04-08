@@ -30,15 +30,15 @@ class EditContactContainer extends Component {
                 <h2>Edit Contact</h2>
                 <label>
                     Name:
-                    <input type='text' defaultValue={contact.name} ref={(input) => this.getName = input}/>
+                    <input type='text' defaultValue={contact.name} ref={(input) => this.getName = input} required />
                 </label>
                 <label>
                     Email:
-                    <input type='text' defaultValue={contact.email} ref={(input) => this.getEmail = input}/>
+                    <input type='email' defaultValue={contact.email} ref={(input) => this.getEmail = input} required />
                 </label>
                 <label>
                     Phone Number:
-                    <input  type='text' defaultValue={contact.phone} ref={(input) => this.getPhone = input}/>
+                    <input  type='tel' defaultValue={contact.phone} pattern='[0-9]{10}' maxLength='10' ref={(input) => this.getPhone = input} required/>
                 </label>
                 <button type='submit'>Submit</button>
             </form>

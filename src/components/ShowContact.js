@@ -11,8 +11,13 @@ class ShowContact extends Component {
         .trim()
         .split(' ')
         .filter(Boolean)
-        name[0] = name[0].charAt(0).toUpperCase() + name[0].slice(1)
-        name[1] = name[1].charAt(0).toUpperCase() + name[1].slice(1)
+        if (name.length > 1){
+            name[0] = name[0].charAt(0).toUpperCase() + name[0].slice(1)
+            name[1] = name[1].charAt(0).toUpperCase() + name[1].slice(1)
+        }
+        else {
+            name[0] = name[0].charAt(0).toUpperCase() + name[0].slice(1) 
+        }
         name = name.join(' ')
 
         // parses contact phone data

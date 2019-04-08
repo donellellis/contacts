@@ -42,14 +42,14 @@ export default function contactReducer(state = DEFAULT_STATE, action){
         case UPDATE_CONTACT:
         return{
             ...state,
-            currentContact: null,
             contacts: state.contacts.map((contact, id) => {
                 if (contact.id !== action.payload.id) return contact
                 return{
                     ...contact,
                     ...action.payload.updatedContact
                 }
-            })
+            }),
+            currentContact: null
         }
         case TOGGLE_SHOW_EDIT:
         return{
