@@ -1,4 +1,16 @@
-import { createStore } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
+import { createLogger } from 'redux-logger'
 import contactReducer from './reducers/contact'
 
-export default createStore(contactReducer)
+const loggerMiddleware = createLogger()
+
+const store = createStore(
+    contactReducer,
+    applyMiddleware(
+        thunkMiddleware,
+        loggerMiddleware
+    )
+);
+
+export default store

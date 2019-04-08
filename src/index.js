@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './stylesheets/main.scss'
-import App from './components/App'
 import { Provider } from 'react-redux'
+import App from './components/App'
+import './stylesheets/main.scss'
 import store from './store'
 
 ReactDOM.render(

@@ -9,23 +9,22 @@ class EditContactContainer extends Component {
     
     handleSubmit = (e) => {
         e.preventDefault()
-        const newName = this.getName.value
-        const newEmail = this.getEmail.value
-        const newPhone = this.getPhone.value
+        const name = this.getName.value
+        const email = this.getEmail.value
+        const phone = this.getPhone.value
         const id = this.props.contacts[0].id
 
         let updatedContact = {
-            name: newName,
-            email: newEmail,
-            phone: newPhone
+            name: name,
+            email: email,
+            phone: phone
         }
         this.props.dispatch(updateContact(id, updatedContact))
         this.props.dispatch(toggleShowEdit())
     }
-
+    
     render(){
         let contact = this.props.contacts[0]
-        console.log(this.props.contacts[0])
         return(
             <form onSubmit={this.handleSubmit}>
                 <h2>Edit Contact</h2>

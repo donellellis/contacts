@@ -1,4 +1,12 @@
-import { CREATE_CONTACT, DELETE_CONTACT, EDIT_CONTACT, UPDATE_CONTACT, TOGGLE_SHOW_EDIT } from '../constants/contact'
+import { 
+    CREATE_CONTACT,
+    DELETE_CONTACT,
+    EDIT_CONTACT,
+    UPDATE_CONTACT,
+    TOGGLE_SHOW_EDIT,
+    FETCH_REQUEST,
+    FETCH_SUCCESS
+} from '../constants/contact'
 
 const DEFAULT_STATE = {
     contacts: [],
@@ -41,6 +49,13 @@ export default function contactReducer(state = DEFAULT_STATE, action){
         return{
             ...state,
             isHidden: !state.isHidden
+        }
+        case FETCH_REQUEST:
+        return state
+        case FETCH_SUCCESS: 
+        return {
+            ...state,
+            contacts: [...state.contacts, ...action.payload]
         }
         default:
             return state

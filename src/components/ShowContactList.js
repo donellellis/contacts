@@ -20,7 +20,6 @@ class Contacts extends Component{
              e.preventDefault()
              this.props.onEdit(contact.id)
              this.props.showEdit(contact.id)
-             console.log(this.props.contacts)
          }}
          />
         ))

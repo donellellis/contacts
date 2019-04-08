@@ -3,11 +3,17 @@ import NewContact from './NewContact'
 import ShowContactList from './ShowContactList'
 
 import { connect } from 'react-redux'
-import EditContact from './EditContact';
+import EditContact from './EditContact'
+
+import { fetchPostsWithRedux } from '../actions/contact'
 
 class AppHome extends Component {
+
+  componentDidMount(){
+    this.props.fetchPostsWithRedux()
+  }
+
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <h1>Contacts</h1>
@@ -19,9 +25,11 @@ class AppHome extends Component {
   }
 }
 
+
+
 const mapStateToProps = state => ({
-  isHidden: state.isHidden 
+  isHidden: state.isHidden
 })
 
-const App = connect(mapStateToProps)(AppHome)
+const App = connect(mapStateToProps, { fetchPostsWithRedux })(AppHome)
 export default App
