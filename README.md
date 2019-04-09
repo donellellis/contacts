@@ -2,10 +2,9 @@
 
 Contact management application that allows a user to create, update, and delete contacts. The app pulls some contacts from an external database and consistently formats the information.
 
-## Authors
-**Donell Ellis**
-https://github.com/donellellis
-http://donellellis.com
+## Author
+**Donell Ellis** https://github.com/donellellis
+
 
 ## Getting Started
 ![Contacts](https://i.imgur.com/6gjASjO.jpg)
