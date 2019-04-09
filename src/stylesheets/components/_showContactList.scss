@@ -11,6 +11,6 @@
     th{
         @include subHeading;
         width: $inputWidth;
-        padding-right: $inputPaddingRight;
-    }
+        padding-right: $formPadding;
+    } 
 }

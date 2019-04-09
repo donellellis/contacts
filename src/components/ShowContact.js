@@ -38,8 +38,8 @@ class ShowContact extends Component {
                 <td>{this.props.email}</td>
                 <td>{phone}</td>
                 <td>
-                    <button onClick={this.props.handleDelete}>Delete</button>
-                    <button onClick={this.props.handleShowEdit}>Edit</button>
+                    <button className='fas fa-pencil-alt' onClick={this.props.handleShowEdit}></button>
+                    <button className='fas fa-trash' onClick={this.props.handleDelete}></button>
                 </td>
             </tr>
         )
