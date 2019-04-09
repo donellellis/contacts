@@ -1,0 +1,7 @@
+.editContact{
+    @include formContainer;
+}
+
+.editContactInput{
+    @include contactForms;
+}

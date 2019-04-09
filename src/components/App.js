@@ -17,6 +17,7 @@ class AppHome extends Component {
   render() {
     return (
       <div className="app">
+      < div className="appCoverImage"></div>
         <h1>Contacts</h1>
         {this.props.isHidden && <NewContact/>}
         {!this.props.isHidden && <EditContact/>}

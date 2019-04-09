@@ -1,4 +1,7 @@
 .newContact{
-    border: 1px black solid;
-    padding: 10px;
+    @include formContainer;
+}
+
+.newContactInput{
+    @include contactForms
 }

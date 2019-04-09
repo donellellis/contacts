@@ -26,7 +26,7 @@ class Contacts extends Component{
         ))
         
         return(
-            <div>
+            <div className='showContactList'>
                 <h2>All Contacts</h2>
                 <table>
                 <thead>

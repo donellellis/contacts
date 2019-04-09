@@ -24,24 +24,24 @@ class NewContactForm extends Component {
 
     render(){
         return(
-            <div className='newContact'>
-            <form onSubmit={this.handleSubmit} >
+            <form onSubmit={this.handleSubmit} className='newContact'>
                 <h2>Add New Contact</h2>
+                <div className='newContactInput'>
                 <label>
-                    Name:
+                    Name
                     <input type='text' placeholder='First Last' required />
                 </label>
                 <label>
-                    Email:
+                    Email
                     <input type='email' placeholder='Email' required />
                 </label>
                 <label>
-                    Phone Number:
+                    Phone Number
                     <input type='tel' placeholder='1234567890' pattern='[0-9]{10}' maxLength='10' required />
                 </label>
+                </div>
                 <button type='submit'>Submit</button>
             </form>
-            </div>
         )
     }
 }

@@ -33,7 +33,7 @@ class ShowContact extends Component {
         phone = phone.join('')
 
         return(
-            <tr>
+            <tr className='showContact'>
                 <td>{name}</td>
                 <td>{this.props.email}</td>
                 <td>{phone}</td>
