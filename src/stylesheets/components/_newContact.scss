@@ -1,7 +1,7 @@
-.newContact{
-    @include formContainer;
+.newContact {
+  @include formContainer;
 }
 
-.newContactInput{
-    @include contactForms
+.newContactInput {
+  @include contactForms;
 }

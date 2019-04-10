@@ -1,66 +1,65 @@
-@mixin heading{
-    font-size: 20px;
-    margin-bottom: 15px;
+@mixin heading {
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
-@mixin subHeading{
-    text-transform: uppercase;
-    text-align: left;
+@mixin subHeading {
+  text-transform: uppercase;
+  text-align: left;
 }
 
-@mixin contactForms{
-    display: flex;
-    width: 100%;
-    input{
-        border: none;
-        border-bottom: 2px black solid;
-        padding-right: 5px;
-        font-size: 16px;
-        font-weight: normal;
-        font-family: $fontParagraph;
-    }
-    label{
-        @include subHeading;
-        width: $inputWidth;
-        line-height: 28px;
-        display: flex;
-        flex-direction: column;
-        margin-right: $formPadding;
-        
-    }
-}
-
-@mixin submitButton{
-    padding: 5px;
-    width: 100px;
-    border: 2px $accentColor solid;
-    margin-top: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    align-self: center;
-    text-transform: uppercase;
-    outline: none;
-}
-
-@mixin formContainer{
+@mixin contactForms {
+  display: flex;
+  width: 100%;
+  input {
+    border: none;
+    border-bottom: 2px black solid;
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: $fontParagraph;
+  }
+  label {
+    @include subHeading;
+    width: $inputWidth;
+    line-height: 28px;
     display: flex;
     flex-direction: column;
-    border: 1px black solid;
-    padding: 20px $formPadding;
-    background-color: $formBackgroundColor;
-    width: $formWidth;
+    margin-right: $formPadding;
+  }
+}
 
-    h2{
-        @include heading;
-    }
+@mixin submitButton {
+  padding: 5px;
+  width: 100px;
+  border: 2px $accentColor solid;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  align-self: center;
+  text-transform: uppercase;
+  outline: none;
+}
 
-    button{
-        @include submitButton;
-    }
+@mixin formContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  padding: 20px $formPadding;
+  background-color: $formBackgroundColor;
+  width: $formWidth;
 
-    button:active{
-        background-color: $accentColor;
-        color: white;
-        outline: none;
-    }
+  h2 {
+    @include heading;
+  }
+
+  button {
+    @include submitButton;
+  }
+
+  button:active {
+    background-color: $accentColor;
+    color: white;
+    outline: none;
+  }
 }

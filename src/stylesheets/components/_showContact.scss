@@ -1,17 +1,16 @@
-.showContact{
-    td{
-        padding-top: 10px;
-        font-family: $fontParagraph;
-    }
-    button{
-        border: none;
-        background: none;
-        font-size: 18px;
-        margin-left: $formPadding;
-        
-    }
-    button:active{
-        color: $accentColor;
-        outline: none;
-    }
+.showContact {
+  td {
+    padding-top: 10px;
+    font-family: $fontParagraph;
+  }
+  button {
+    border: none;
+    background: none;
+    font-size: 18px;
+    margin-left: $formPadding;
+  }
+  button:active {
+    color: $accentColor;
+    outline: none;
+  }
 }

@@ -1,16 +1,16 @@
-.showContactList{
-    background-color: $formBackgroundColor;
-    padding: $formPadding;
-    margin: 15px;
-    width: $formWidth;
+.showContactList {
+  background-color: $formBackgroundColor;
+  padding: $formPadding;
+  margin: 15px;
+  width: $formWidth;
 
-    h2{
-        @include heading;
-    }
+  h2 {
+    @include heading;
+  }
 
-    th{
-        @include subHeading;
-        width: $inputWidth;
-        padding-right: $formPadding;
-    } 
+  th {
+    @include subHeading;
+    width: $inputWidth;
+    padding-right: $formPadding;
+  }
 }
